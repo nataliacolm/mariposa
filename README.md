@@ -47,3 +47,4 @@ Entered value: **1**
     
     
 *Users can view the potential environmental impact by viewing travel options and their respective carbon emission points*
+Something to note while viewing outputed carbon emission points, to work successfully with an incentivized points system, emission points for personal vehicle options were adjusted by scale. This is due to the massive difference in calculated emissions between personal vehicle and other transportaiton options. Personal vehicle options frequently generate more than 10 times the emissions of other options based on simulated application runs pulling from actual emission data. 
