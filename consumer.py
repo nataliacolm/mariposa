@@ -43,11 +43,12 @@ def process_message(message):
     # add message response to SQL:
     db = mysql.connector.connect(HOST, USER, PASSWORD)
     cursor = db.cursor()
-    sql1 = 'UPDATE Requests SET result = res WHERE message[job_id] = job_id'
+    sql1 = 'UPDATE Requests SET result = %s WHERE message[job_id] = job_id'
+    sql_tuple = (res,)
     sql2 = 'UPDATE Requests SET ready = true WHERE message[job_id] = job_id'
 
     try:
-        cursor.execute(sql1)
+        cursor.execute(sql1, sql_tuple)
         cursor.execute(sql2)
     except:
         db.rollback()
@@ -57,7 +58,7 @@ def process_message(message):
 if __name__ == 'main':
     # implement long polling
     while True:
-        messages = q.receive_messages(WaitTimeSeconds=30)
+        messages = q.receive_messages(WaitTimeSeconds=20)
         for message in messages:
             try:
                 process_message(message)

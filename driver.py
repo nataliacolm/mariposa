@@ -1,3 +1,8 @@
+'''
+Code is modified from Github https://github.com/J0ANMM/carbon-calculator to calculate quota, points reducted,
+and determine how transportation modes affect carbon emissions.
+'''
+
 from geopy.geocoders import Nominatim
 import geocoder
 from geopy.distance import geodesic
