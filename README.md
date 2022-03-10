@@ -30,7 +30,7 @@ Entered value: **1**
 
 > Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
   
-  Electric Shuttle Options: 
+  Transport Options: 
     
     1. Shuttle Option 1 
       Est. Arrival Time:  12 
