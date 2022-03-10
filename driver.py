@@ -14,7 +14,6 @@ class Driver:
         locale = input(
             "Type number of desired location from list:\n 1) KMPG, 2) Expedia, 3) Amazon, 4) Dell\n"
         )
-        print(locale)
 
         # grab current latitude and longitude
         geolocator = Nominatim(user_agent="My App")
@@ -28,12 +27,16 @@ class Driver:
         # calculate distance to selected location
         if locale == "1":
             officeAddress = "111 Congress Ave, Austin, TX 78701"
+            print("Destination Choice: KPMG Austin Office")
         elif locale == "2":
             officeAddress = "11920 Alterra Pkwy, Austin, TX 78758"
+            print("Destination Choice: Expedia Austin Office")
         elif locale == "3":
             officeAddress = "11501 Alterra Pkwy, Austin, TX 78758"
+            print("Destination Choice: Amazon Austin Office")
         else:
             officeAddress = "9715 Burnet Road, Austin, TX 78758"
+            print("Destination Choice: Dell Austin Office")
 
         officeLocation = geolocator.geocode(officeAddress)
         officeCoords = (officeLocation.latitude, officeLocation.longitude)
@@ -83,21 +86,6 @@ class Driver:
             trip_type=trip_type,
         )
         print("")
-
-    def calculateShuttles(useData, dataLength):
-        # FIXME, change to business hours
-        averageUse = []
-        # range based off of hours in day
-        for j in range(0, 24):
-            sum = 0
-            # range can be increased as more data is collected
-            for i in range(0, dataLength):
-                sum = sum + useData[i][j]
-            averageUse.append(math.ceil(sum / dataLength))
-        """hour = 0
-    for people in averageUse:
-        print("hour: ", hour, "people avg: ", people)
-        hour = hour + 1"""
 
 
 if __name__ == "__main__":
