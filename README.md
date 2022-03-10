@@ -9,21 +9,23 @@ python3 driver.py
 Make sure to first install all requirements mentioned within requirements.txt
 
 ## Output/Dialog Process
-Welcome!
-Type number of desired location from list:
-1) KMPG, 2) Expedia, 3) Amazon, 4) Dell
-**1**
+> Welcome!
+> Type number of desired location from list:
+> 1) KMPG, 2) Expedia, 3) Amazon, 4) Dell
 
-Destination Choice: KPMG Austin Office
-Based on current geolocation, trip distance is  12  kilometers *Makes an API call to determine distance from location of mobile app request to destination*
+Entered value: **1**
 
-Please input desired arrival range start time: (in format HH:MM , using military time) 
+> Destination Choice: KPMG Austin Office
+> Based on current geolocation, trip distance is  12  kilometers 
+*Makes an API call to determine distance from location of mobile app request to destination*
+
+> Please input desired arrival range start time: (in format HH:MM , using military time) 
 **12:34** 
 
-Please input desired arrival range end time: (in format HH:MM , using military time) 
+> Please input desired arrival range end time: (in format HH:MM , using military time) 
 **14:22**
 
-Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
+> Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
   Electric Shuttle Options:
   Shuttle Option 1 
     Est. Arrival Time:  12 
