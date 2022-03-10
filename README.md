@@ -1,19 +1,21 @@
 # Mariposa
 
-To view algorithm run the following on command line:
+Mariposa is a mobile/web application and autonomous electric vehicle system which allows KPMG employees and partners to reduce their carbon footprint. Via incentives and community challenges, users are motivated to make transport decisions informed by environmental impact.
+
+To run a simulation of the client scripts and server scripts run the following on command line:
 python3 driver.py
 
 # Output
 Welcome!
 Type number of desired location from list:
- 1) KMPG, 2) Expedia, 3) Amazon, 4) Dell
+1) KMPG, 2) Expedia, 3) Amazon, 4) Dell
 **1**
 
 Destination Choice: KPMG Austin Office
-Based on current geolocation, trip distance is  12  kilometers 
+Based on current geolocation, trip distance is  12  kilometers *Makes an API call to determine distance from location of mobile app request to destination*
 
 Please input desired arrival range start time: (in format HH:MM , using military time) 
-**12:34**
+**12:34** 
 
 Please input desired arrival range end time: (in format HH:MM , using military time) 
 **14:22**
@@ -34,3 +36,6 @@ Thank you! Travel options within this time range are as follows. To select an op
     Carbon Emission Points: 0
    4 . Personal Vehicle (Honda City Petrol)
     Carbon Emission Points:  107
+    
+    
+*Users can view the potential environmental impact by viewing travel options and their respective carbon emission points*
