@@ -43,10 +43,12 @@ def process_message(message):
     # add message response to SQL:
     db = mysql.connector.connect(HOST, USER, PASSWORD)
     cursor = db.cursor()
-    sql = 'UPDATE Requests SET result = res WHERE message[job_id] = job_id'
+    sql1 = 'UPDATE Requests SET result = res WHERE message[job_id] = job_id'
+    sql2 = 'UPDATE Requests SET ready = true WHERE message[job_id] = job_id'
 
     try:
-        cursor.execute(sql)
+        cursor.execute(sql1)
+        cursor.execute(sql2)
     except:
         db.rollback()
 

@@ -1,0 +1,7 @@
+from chalice import Chalice
+import boto3
+import json
+
+app = Chalice(app_name = mariposa_api)
+
+BUCKET_NAME = ""
