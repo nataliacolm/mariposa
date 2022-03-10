@@ -12,7 +12,7 @@ class Driver:
         print("Welcome!")
 
         locale = input(
-            "Type number of desired location from list:\n 1) KMPG, 2) Expedia, 3) Amazon, 4) Dell\n"
+            "Type number of desired location from list:\n1) KMPG, 2) Expedia, 3) Amazon, 4) Dell\n"
         )
 
         # grab current latitude and longitude
@@ -48,20 +48,32 @@ class Driver:
             " kilometers \n",
         )
 
-        # FIXME NEED VALIDATION OF INPUTS
+      
         startRange = input(
-            "Please input desired arrival range start time: (in format HH:MM , using military time) "
+            "Please input desired arrival range start time: (in format HH:MM , using military time, from [05 to 19]) "
         )
         endRange = input(
-            "Please input desired arrival range end time: (in format HH:MM , using military time) "
+            "Please input desired arrival range end time: (in format HH:MM , using military time, from [05 to 19]) "
         )
-        # FIXME - parse
+        hourStart = int(startRange.split(":", 1)[0])
+        hourEnd = int(endRange.split(":", 1)[0])
+
+        while((hourStart < 5 )or (hourStart > 19)):
+            print("Start Range is out of business hours, please input a new time")
+            startRange = input("Please input desired arrival range start time: (in format HH:MM , using military time, from [05 to 19]) ")
+            hourStart = int(startRange.split(":", 1)[0])
+
+        while(hourEnd < 5 or hourEnd > 19):
+            hourEnd = int(endRange.split(":", 1)[0])
+            print("End Range is out of business hours, please input a new time")
+            endRange = input("Please input desired arrival range end time: (in format HH:MM , using military time, from [05 to 19])")
+       
 
         # Generate Shuttle Options + Emissions for each
         print(
             "Thank you! Travel options within this time range are as follows. To select an option, type the choice's number"
         )
-        print("  Electric Shuttle Options:")
+        print("  Transport Options:")
         ## run through list of avg use over time slots, generating carbon emissions for each slot (remove unavailable times)
         numOptions = Server.calcShuttleSlots(
             startRange, endRange, Server.processData(2), distance
@@ -81,10 +93,16 @@ class Driver:
         )
         
         print(
-            "  ",
+            "\n  ",
             numOptions + 2,
             ". Personal Vehicle (Honda City Petrol)\n    Carbon Emission Points: ", co2_car_petrol_1,
         )
+        number = input("\nWhich transport option would you like to select? (Input # or 0 to book none): ")
+        if((int(number) == 0) or (int(number) > numOptions + 2)):
+            print("No options have been booked. Thank you!")
+        else:
+            print("Option ", number, " has now been scheduled. Thank you!")
+
 
 
 if __name__ == "__main__":
