@@ -66,14 +66,8 @@ class Driver:
         numOptions = Server.calcShuttleSlots(
             startRange, endRange, Server.processData(2), distance
         )
-        print("  ", numOptions + 1, ". Bike, Walk, Scooter\nCarbon Emission Points: 0")
+        print("  ", numOptions + 1, ". Bike, Walk, Scooter\n    Carbon Emission Points: 0")
         # FIXME:  call car carbon emission
-        print(
-            "  ",
-            numOptions + 2,
-            ". Personal Vehicle (Honda City Petrol)\nCarbon Emission Points:",
-        )
-
         trip_type = "one-way"
 
         co2_car_petrol_1 = CarbonCar().calculate_co2(
@@ -85,7 +79,12 @@ class Driver:
             pax_in_car=1,
             trip_type=trip_type,
         )
-        print("")
+        
+        print(
+            "  ",
+            numOptions + 2,
+            ". Personal Vehicle (Honda City Petrol)\n    Carbon Emission Points: ", co2_car_petrol_1,
+        )
 
 
 if __name__ == "__main__":
