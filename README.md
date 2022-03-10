@@ -7,14 +7,17 @@ python3 driver.py
 Welcome!
 Type number of desired location from list:
  1) KMPG, 2) Expedia, 3) Amazon, 4) Dell
-> 1
+1
+
 Destination Choice: KPMG Austin Office
 Based on current geolocation, trip distance is  12  kilometers 
 
 Please input desired arrival range start time: (in format HH:MM , using military time) 
-> 12:34
+12:34
+
 Please input desired arrival range end time: (in format HH:MM , using military time) 
-> 14:22
+14:22
+
 Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
   Electric Shuttle Options:
   Shuttle Option 1 
