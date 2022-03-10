@@ -1,4 +1,5 @@
-# Mariposa
+# Mariposa 
+![mariposa](https://user-images.githubusercontent.com/46806107/157618628-5665e5a2-a515-47e5-bf92-f7f3f6498cbb.png)
 
 ## Overview
 Mariposa is a mobile/web application and autonomous electric vehicle system which allows KPMG employees and partners to reduce their carbon footprint. Via incentives and community challenges, users are motivated to make transport decisions informed by environmental impact. This repeository highlights some key user interaction features shown bare without a front-end. The prospective, bare-bones versions of server, client, and scripts for AWS technologies are housed here. 
@@ -47,4 +48,5 @@ Entered value: **1**
     
     
 *Users can view the potential environmental impact by viewing travel options and their respective carbon emission points*
+
 Something to note while viewing outputed carbon emission points, to work successfully with an incentivized points system, emission points for personal vehicle options were adjusted by scale. This is due to the massive difference in calculated emissions between personal vehicle and other transportaiton options. Personal vehicle options frequently generate more than 10 times the emissions of other options based on simulated application runs pulling from actual emission data. 
