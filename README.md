@@ -4,7 +4,7 @@
 </p>
 
 ## Overview
-Mariposa is a mobile/web application and autonomous electric vehicle system which allows KPMG employees and partners to reduce their carbon footprint. Via incentives and community challenges, users are motivated to make transport decisions informed by environmental impact. This repeository highlights some key user interaction features shown bare without a front-end. The prospective, bare-bones versions of server, client, and scripts for AWS technologies are housed here. 
+Mariposa is a mobile/web application and autonomous electric vehicle system which allows KPMG employees and partners to reduce their carbon footprint. Via incentives and community challenges, users are motivated to make transport decisions informed by environmental impact. This repository highlights some key user interaction features shown bare without a front-end. The prospective, bare-bones versions of server, client, and scripts for AWS technologies are housed here. Open source python scripts were used from the following GitHub https://github.com/J0ANMM/carbon-calculator to incorporate a base for the carbon calculator based on real data and modes of transportation.
 
 
 ## Interaction
