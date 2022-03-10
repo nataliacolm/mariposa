@@ -27,16 +27,16 @@ Entered value: **1**
 
 > Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
   
- _ Electric Shuttle Options:
-  Shuttle Option 1 
-    Est. Arrival Time:  12 
-    Carbon Emission Points:  9 
-    Est. # of Passengers:  7 
+  Electric Shuttle Options:
+    1. Shuttle Option 1 
+      Est. Arrival Time:  12 
+      Carbon Emission Points:  9 
+      Est. # of Passengers:  7 
 
-  Shuttle Option 2 
-    Est. Arrival Time:  13 
-    Carbon Emission Points:  8 
-    Est. # of Passengers:  8 
+    2. Shuttle Option 2 
+      Est. Arrival Time:  13 
+      Carbon Emission Points:  8 
+      Est. # of Passengers:  8 
 
    3 . Bike, Walk, Scooter
     Carbon Emission Points: 0
