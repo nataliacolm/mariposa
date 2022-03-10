@@ -26,7 +26,8 @@ Entered value: **1**
 **14:22**
 
 > Thank you! Travel options within this time range are as follows. To select an option, type the choice's number
-  Electric Shuttle Options:
+  
+ _ Electric Shuttle Options:
   Shuttle Option 1 
     Est. Arrival Time:  12 
     Carbon Emission Points:  9 
@@ -40,7 +41,7 @@ Entered value: **1**
    3 . Bike, Walk, Scooter
     Carbon Emission Points: 0
    4 . Personal Vehicle (Honda City Petrol)
-    Carbon Emission Points:  107
+    Carbon Emission Points:  107_
     
     
 *Users can view the potential environmental impact by viewing travel options and their respective carbon emission points*
