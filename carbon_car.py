@@ -48,6 +48,8 @@ class CarbonCar(Carbon):
                 kgCO2_per_litre[fuel_type] * float(fuel_consumption) * 10.0
             )
             gr_co2_driving = gr_co2_driving / 25
+            if(gr_co2_driving > 70):
+                gr_co2_driving / 2
 
         else:
             print(
