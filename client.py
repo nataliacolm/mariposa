@@ -51,7 +51,7 @@ class CarbonCalculatorTester(object):
     def compare_flight_train(self):
         """"""
 
-        dist_km = 600
+        dist_km = 600 
         trip_type = "one-way"
         pax_class = "economy-class"
 
@@ -157,24 +157,29 @@ class CarbonCalculatorTester(object):
     def testTool(self):
 
         useData = []
-        for i in range(0, 7):
+        # number of use statistic lists covering 24 hours
+        dataLength = 30
+        for i in range(0, dataLength):
             useData.append([])
+            # append 24 hours
             for j in range(0, 24):
-                useData[i].append(random.randrange(24))
+                useData[i].append(random.randrange(20))
 
-        for hours in useData:
-            print(hours, "\n")
+        '''for hours in useData:
+            print(hours, "\n")'''
 
         print("Welcome!")
+        #FIXME NEED VALIDATION OF INPUTS
         startRange = input(
             "Please input desired arrival range start time: (in format HH:MM , using military time) "
         )
         endRange = input(
             "Please input desired arrival range end time: (in format HH:MM , using military time) "
         )
+        #FIXME - parse
 
         location = input(
-            "Type number of desired location from list:\n 1) KMPG Lake Nona, 2) Client 1, 3) Client 2, 4) Client 3"
+            "Type number of desired location from list:\n 1) KMPG Lake Nona, 2) Client 1, 3) Client 2, 4) Client 3\n"
         )
         # grab current latitude and longitude
         geolocator = Nominatim(user_agent="My App")
@@ -184,6 +189,7 @@ class CarbonCalculatorTester(object):
         latitude = my_location.geojson["features"][0]["properties"]["lat"]
         longitude = my_location.geojson["features"][0]["properties"]["lng"]
         userCoords = (latitude, longitude)
+        # FIXME: add options for all desired locations
         # calculate distance from KPMG Orlando Office
         officeData = geolocator.geocode("9301 Lake Nona Blvd, Orlando, FL 32827")
         officeCoords = (officeData.latitude, officeData.longitude)
@@ -195,7 +201,7 @@ class CarbonCalculatorTester(object):
         )
 
         # Generate Shuttle Options + Emissions for each
-        calculateShuttles(useData)
+        calculateShuttles(useData, dataLength)
         print(
             "Thank you! Travel options within this time range are as follows. To select an option, type the choice's number"
         )
@@ -206,26 +212,18 @@ class CarbonCalculatorTester(object):
         print("")
 
 
-def calculateShuttles(useData):
+def calculateShuttles(useData, dataLength):
     averageUse = []
+    #range based off of hours in day
     for j in range(0, 24):
         sum = 0
-        for i in range(0, 7):
+        #range can be increased as more data is collected
+        for i in range(0, dataLength):
             sum = sum + useData[i][j]
-        averageUse.append(math.ceil(sum / 7))
-    hour = 0
+        averageUse.append(math.ceil(sum / dataLength))
+    '''hour = 0
     for people in averageUse:
         print("hour: ", hour, "people avg: ", people)
-        hour = hour + 1
+        hour = hour + 1'''
 
 
-if __name__ == "__main__":
-
-    cct = CarbonCalculatorTester()
-
-    # cct.compare_flight_ferry()
-    # cct.compare_flight_train()
-    cct.testTool()
-    # cct.compare_trains()
-    # cct.compare_train_bus_car()
-    # cct.compare_cars()
